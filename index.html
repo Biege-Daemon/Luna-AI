@@ -614,7 +614,6 @@
         <div class="chat-container">
             <div class="messages" id="messages">
                 <div class="welcome-message">
-                    <p>Hello, I'm Luna ✨</p>
                     <p>I'm here to listen, understand, and grow with you through our conversations.</p>
                     <p>Ready to chat whenever you are!</p>
                 </div>
@@ -720,6 +719,17 @@
         }
     }
 
+    // Calculate typing delay based on message length
+    calculateTypingDelay(message) {
+        const words = message.trim().split(/\s+/).length;
+        const baseDelay = 2000; // Base delay in ms
+        const perWordDelay = 1000; // Additional delay per word
+        const maxDelay = 25000; // Maximum delay cap
+        
+        const calculatedDelay = baseDelay + (words * perWordDelay);
+        return Math.min(calculatedDelay, maxDelay);
+    }
+
     async sendMessage() {
         const messageInput = document.getElementById('messageInput');
         const message = messageInput.value.trim();
@@ -738,9 +748,19 @@
         
         try {
             const response = await this.getAIResponse(message);
+            
+            // Calculate delay based on response length
+            const typingDelay = this.calculateTypingDelay(response);
+            
+            // Wait for the calculated delay before showing response
+            await new Promise(resolve => setTimeout(resolve, typingDelay));
+            
             this.hideTypingIndicator();
             this.addMessage('luna', response);
         } catch (error) {
+            // Even for errors, add a small delay to feel natural
+            await new Promise(resolve => setTimeout(resolve, 1200));
+            
             this.hideTypingIndicator();
             let errorMessage = "I'm having trouble connecting right now. ";
             
@@ -845,7 +865,7 @@
         const messageCount = this.conversationHistory.filter(msg => msg.role === 'user').length;
         let stage = 'stranger';
         
-        if (messageCount > 300) stage = 'close';      // After 450 messages = very close
+        if (messageCount > 450) stage = 'close';      // After 450 messages = very close
         else if (messageCount > 150) stage = 'friend'; // 250-450 = friend
         else if (messageCount > 50) stage = 'acquaintance'; // 150-250 = acquaintance  
         else if (messageCount > 0) stage = 'stranger'; // 50+ = still getting to know
