@@ -7,576 +7,576 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Crimson+Text:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
     <style>
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
-            background: #f5f5f7;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #1d1d1f;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+    background: #000000;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
 
-        .container {
-            width: 100%;
-            max-width: 900px;
-            height: 90vh;
-            background: #ffffff;
-            backdrop-filter: blur(40px);
-            border: 1px solid rgba(0, 0, 0, 0.06);
-            display: flex;
-            flex-direction: column;
-            border-radius: 16px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.05);
-            margin: 20px;
-            overflow: hidden;
-        }
+.container {
+    width: 100%;
+    max-width: 900px;
+    height: 90vh;
+    background: #1c1c1e;
+    backdrop-filter: blur(40px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+    overflow: hidden;
+}
 
-        .header {
-            padding: 20px 24px;
-            background: #ffffff;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+.header {
+    padding: 20px 24px;
+    background: #1c1c1e;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
-        .luna-info {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+.luna-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
 
-        .luna-avatar {
-            width: 44px;
-            height: 44px;
-            background: #ff6b35;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            font-weight: 600;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(255, 107, 53, 0.2);
-        }
+.luna-avatar {
+    width: 44px;
+    height: 44px;
+    background: #ff6b35;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(255, 107, 53, 0.2);
+}
 
-        .luna-details h1 {
-            font-size: 22px;
-            font-weight: 600;
-            color: #1d1d1f;
-            margin-bottom: 2px;
-            letter-spacing: -0.01em;
-        }
+.luna-details h1 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 2px;
+    letter-spacing: -0.01em;
+}
 
-        .luna-status {
-            font-size: 13px;
-            color: #86868b;
-            font-weight: 400;
-        }
+.luna-status {
+    font-size: 13px;
+    color: #8e8e93;
+    font-weight: 400;
+}
 
-        .controls-container {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+.controls-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
 
-        .connection-status {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            padding: 6px 12px;
-            background: #f5f5f7;
-            border-radius: 20px;
-            font-size: 12px;
-            color: #34c759;
-            font-weight: 500;
-        }
+.connection-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: #2c2c2e;
+    border-radius: 20px;
+    font-size: 12px;
+    color: #34c759;
+    font-weight: 500;
+}
 
-        .status-dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: #34c759;
-        }
+.status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #34c759;
+}
 
-        .control-button {
-            padding: 8px;
-            background: #f5f5f7;
-            border: none;
-            color: #86868b;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-width: 36px;
-            min-height: 36px;
-        }
+.control-button {
+    padding: 8px;
+    background: #2c2c2e;
+    border: none;
+    color: #8e8e93;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    min-height: 36px;
+}
 
-        .control-button:hover {
-            background: #e8e8ed;
-            color: #1d1d1f;
-            transform: translateY(-1px);
-        }
+.control-button:hover {
+    background: #3a3a3c;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
 
-        .control-button:active {
-            transform: translateY(0);
-            background: #d2d2d7;
-        }
+.control-button:active {
+    transform: translateY(0);
+    background: #48484a;
+}
 
-        .chat-container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-        }
+.chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
 
-        .messages {
-            flex: 1;
-            padding: 24px;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            background: #fbfbfd;
-        }
+.messages {
+    flex: 1;
+    padding: 24px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: #000000;
+}
 
-        .message {
-            display: flex;
-            gap: 12px;
-            max-width: 75%;
-            opacity: 0;
-            transform: translateY(10px);
-            animation: fadeInUp 0.4s ease forwards;
-        }
+.message {
+    display: flex;
+    gap: 12px;
+    max-width: 75%;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 0.4s ease forwards;
+}
 
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-        .message.user {
-            align-self: flex-end;
-            flex-direction: row-reverse;
-        }
+.message.user {
+    align-self: flex-end;
+    flex-direction: row-reverse;
+}
 
-        .message.luna {
-            align-self: flex-start;
-        }
+.message.luna {
+    align-self: flex-start;
+}
 
-        .message-avatar {
-            width: 32px;
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            font-size: 12px;
-            flex-shrink: 0;
-        }
+.message-avatar {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 12px;
+    flex-shrink: 0;
+}
 
-        .message.user .message-avatar {
-            background: #007aff;
-            color: white;
-            border-radius: 8px;
-        }
+.message.user .message-avatar {
+    background: #007aff;
+    color: white;
+    border-radius: 8px;
+}
 
-        .message.luna .message-avatar {
-            background: #ff6b35;
-            color: white;
-            border-radius: 8px;
-        }
+.message.luna .message-avatar {
+    background: #ff6b35;
+    color: white;
+    border-radius: 8px;
+}
 
-        .message-content {
-            padding: 12px 16px;
-            line-height: 1.5;
-            font-size: 15px;
-            border-radius: 18px;
-            position: relative;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            font-weight: 400;
-        }
+.message-content {
+    padding: 12px 16px;
+    line-height: 1.5;
+    font-size: 15px;
+    border-radius: 18px;
+    position: relative;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-weight: 400;
+}
 
-        .message.user .message-content {
-            background: #007aff;
-            color: white;
-        }
+.message.user .message-content {
+    background: #007aff;
+    color: white;
+}
 
-        .message.luna .message-content {
-            background: #ffffff;
-            color: #1d1d1f;
-            border: 1px solid rgba(0, 0, 0, 0.08);
-        }
+.message.luna .message-content {
+    background: #1c1c1e;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
 
-        .input-container {
-            padding: 16px 24px 20px;
-            background: #ffffff;
-            border-top: 1px solid rgba(0, 0, 0, 0.08);
-            display: flex;
-            gap: 12px;
-            align-items: flex-end;
-        }
+.input-container {
+    padding: 16px 24px 20px;
+    background: #1c1c1e;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    gap: 12px;
+    align-items: flex-end;
+}
 
-        .message-input {
-            flex: 1;
-            min-height: 44px;
-            max-height: 120px;
-            padding: 12px 16px;
-            border: 1px solid rgba(0, 0, 0, 0.12);
-            background: #ffffff;
-            color: #1d1d1f;
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
-            font-size: 16px;
-            line-height: 1.4;
-            border-radius: 22px;
-            resize: none;
-            transition: all 0.2s ease;
-            -webkit-appearance: none;
-        }
+.message-input {
+    flex: 1;
+    min-height: 44px;
+    max-height: 120px;
+    padding: 12px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: #2c2c2e;
+    color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    border-radius: 22px;
+    resize: none;
+    transition: all 0.2s ease;
+    -webkit-appearance: none;
+}
 
-        .message-input:focus {
-            outline: none;
-            border-color: #007aff;
-            box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
-        }
+.message-input:focus {
+    outline: none;
+    border-color: #007aff;
+    box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.2);
+}
 
-        .message-input::placeholder {
-            color: #86868b;
-        }
+.message-input::placeholder {
+    color: #8e8e93;
+}
 
-        .send-button {
-            padding: 12px 20px;
-            background: #007aff;
-            color: white;
-            border: none;
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
-            font-size: 16px;
-            font-weight: 500;
-            cursor: pointer;
-            border-radius: 22px;
-            transition: all 0.2s ease;
-            min-width: 80px;
-            height: 44px;
-        }
+.send-button {
+    padding: 12px 20px;
+    background: #007aff;
+    color: white;
+    border: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 22px;
+    transition: all 0.2s ease;
+    min-width: 80px;
+    height: 44px;
+}
 
-        .send-button:hover:not(:disabled) {
-            background: #0056d0;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
-        }
+.send-button:hover:not(:disabled) {
+    background: #0056d0;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
+}
 
-        .send-button:active:not(:disabled) {
-            transform: translateY(0);
-            background: #004ba0;
-        }
+.send-button:active:not(:disabled) {
+    transform: translateY(0);
+    background: #004ba0;
+}
 
-        .send-button:disabled {
-            opacity: 0.4;
-            cursor: not-allowed;
-            transform: none;
-        }
+.send-button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none;
+}
 
-        .typing-indicator {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 16px 0;
-            opacity: 0;
-            transform: translateY(10px);
-            transition: all 0.3s ease;
-        }
+.typing-indicator {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 0;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
 
-        .typing-indicator.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
+.typing-indicator.show {
+    opacity: 1;
+    transform: translateY(0);
+}
 
-        .typing-dots {
-            display: flex;
-            gap: 3px;
-        }
+.typing-dots {
+    display: flex;
+    gap: 3px;
+}
 
-        .typing-dot {
-            width: 6px;
-            height: 6px;
-            background: #ff6b35;
-            border-radius: 50%;
-            animation: typingPulse 1.4s infinite;
-        }
+.typing-dot {
+    width: 6px;
+    height: 6px;
+    background: #ff6b35;
+    border-radius: 50%;
+    animation: typingPulse 1.4s infinite;
+}
 
-        .typing-dot:nth-child(2) { animation-delay: 0.2s; }
-        .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
 
-        @keyframes typingPulse {
-            0%, 60%, 100% { opacity: 0.3; }
-            30% { opacity: 1; }
-        }
+@keyframes typingPulse {
+    0%, 60%, 100% { opacity: 0.3; }
+    30% { opacity: 1; }
+}
 
-        .welcome-message {
-            text-align: center;
-            padding: 40px 20px;
-            color: #86868b;
-            font-style: normal;
-            font-weight: 400;
-        }
+.welcome-message {
+    text-align: center;
+    padding: 40px 20px;
+    color: #8e8e93;
+    font-style: normal;
+    font-weight: 400;
+}
 
-        .memory-indicator {
-            position: absolute;
-            top: 8px;
-            right: 8px;
-            font-size: 10px;
-            color: #86868b;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            font-weight: 500;
-        }
+.memory-indicator {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 10px;
+    color: #8e8e93;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-weight: 500;
+}
 
-        .message:hover .memory-indicator {
-            opacity: 1;
-        }
+.message:hover .memory-indicator {
+    opacity: 1;
+}
 
-        .error-message {
-            background: #ff3b30;
-            color: white;
-            padding: 12px 16px;
-            border-radius: 12px;
-            margin: 12px 0;
-            font-size: 14px;
-            font-weight: 500;
-        }
+.error-message {
+    background: #ff3b30;
+    color: white;
+    padding: 12px 16px;
+    border-radius: 12px;
+    margin: 12px 0;
+    font-size: 14px;
+    font-weight: 500;
+}
 
-        @media (max-width: 768px) {
-            body {
-                align-items: stretch;
-                padding: 0;
-                background: #ffffff;
-            }
-            
-            .container {
-                height: 100vh;
-                margin: 0;
-                border-radius: 0;
-                border: none;
-                max-width: none;
-                box-shadow: none;
-            }
-            
-            .header {
-                padding: 12px 20px;
-                padding-top: calc(12px + env(safe-area-inset-top));
-            }
-            
-            .luna-info {
-                gap: 10px;
-            }
-            
-            .luna-avatar {
-                width: 40px;
-                height: 40px;
-                font-size: 16px;
-                border-radius: 10px;
-            }
-            
-            .luna-details h1 {
-                font-size: 20px;
-            }
-            
-            .luna-status {
-                font-size: 12px;
-            }
-            
-            .controls-container {
-                gap: 6px;
-            }
-            
-            .connection-status {
-                padding: 4px 10px;
-                font-size: 11px;
-            }
-            
-            .control-button {
-                padding: 6px;
-                min-width: 32px;
-                min-height: 32px;
-            }
-            
-            .messages {
-                padding: 16px 20px;
-                gap: 14px;
-                background: #ffffff;
-                -webkit-overflow-scrolling: touch;
-            }
-            
-            .message {
-                max-width: 85%;
-                gap: 10px;
-            }
-            
-            .message-avatar {
-                width: 28px;
-                height: 28px;
-                font-size: 11px;
-            }
-            
-            .message-content {
-                padding: 10px 14px;
-                font-size: 15px;
-                border-radius: 16px;
-                word-break: break-word;
-                hyphens: auto;
-            }
-            
-            .memory-indicator {
-                display: none;
-            }
-            
-            .input-container {
-                padding: 12px 20px;
-                gap: 10px;
-                padding-bottom: calc(12px + env(safe-area-inset-bottom));
-            }
-            
-            .message-input {
-                min-height: 40px;
-                max-height: 100px;
-                padding: 10px 16px;
-                font-size: 16px;
-                border-radius: 20px;
-            }
-            
-            .send-button {
-                padding: 10px 16px;
-                font-size: 15px;
-                min-width: 70px;
-                height: 40px;
-                border-radius: 20px;
-            }
-            
-            .typing-indicator {
-                padding: 12px 20px 0;
-                gap: 10px;
-            }
-            
-            .typing-indicator .message-avatar {
-                width: 28px;
-                height: 28px;
-                font-size: 11px;
-            }
-            
-            .welcome-message {
-                padding: 30px 20px;
-                font-size: 15px;
-            }
-            
-            .error-message {
-                margin: 8px 20px;
-                font-size: 14px;
-                padding: 10px 14px;
-                border-radius: 10px;
-            }
-        }
+@media (max-width: 768px) {
+    body {
+        align-items: stretch;
+        padding: 0;
+        background: #000000;
+    }
+    
+    .container {
+        height: 100vh;
+        margin: 0;
+        border-radius: 0;
+        border: none;
+        max-width: none;
+        box-shadow: none;
+    }
+    
+    .header {
+        padding: 12px 20px;
+        padding-top: calc(12px + env(safe-area-inset-top));
+    }
+    
+    .luna-info {
+        gap: 10px;
+    }
+    
+    .luna-avatar {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+        border-radius: 10px;
+    }
+    
+    .luna-details h1 {
+        font-size: 20px;
+    }
+    
+    .luna-status {
+        font-size: 12px;
+    }
+    
+    .controls-container {
+        gap: 6px;
+    }
+    
+    .connection-status {
+        padding: 4px 10px;
+        font-size: 11px;
+    }
+    
+    .control-button {
+        padding: 6px;
+        min-width: 32px;
+        min-height: 32px;
+    }
+    
+    .messages {
+        padding: 16px 20px;
+        gap: 14px;
+        background: #000000;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .message {
+        max-width: 85%;
+        gap: 10px;
+    }
+    
+    .message-avatar {
+        width: 28px;
+        height: 28px;
+        font-size: 11px;
+    }
+    
+    .message-content {
+        padding: 10px 14px;
+        font-size: 15px;
+        border-radius: 16px;
+        word-break: break-word;
+        hyphens: auto;
+    }
+    
+    .memory-indicator {
+        display: none;
+    }
+    
+    .input-container {
+        padding: 12px 20px;
+        gap: 10px;
+        padding-bottom: calc(12px + env(safe-area-inset-bottom));
+    }
+    
+    .message-input {
+        min-height: 40px;
+        max-height: 100px;
+        padding: 10px 16px;
+        font-size: 16px;
+        border-radius: 20px;
+    }
+    
+    .send-button {
+        padding: 10px 16px;
+        font-size: 15px;
+        min-width: 70px;
+        height: 40px;
+        border-radius: 20px;
+    }
+    
+    .typing-indicator {
+        padding: 12px 20px 0;
+        gap: 10px;
+    }
+    
+    .typing-indicator .message-avatar {
+        width: 28px;
+        height: 28px;
+        font-size: 11px;
+    }
+    
+    .welcome-message {
+        padding: 30px 20px;
+        font-size: 15px;
+    }
+    
+    .error-message {
+        margin: 8px 20px;
+        font-size: 14px;
+        padding: 10px 14px;
+        border-radius: 10px;
+    }
+}
 
-        @media (max-width: 480px) {
-            .header {
-                padding: 10px 16px;
-                padding-top: calc(10px + env(safe-area-inset-top));
-            }
-            
-            .luna-info {
-                gap: 8px;
-            }
-            
-            .luna-avatar {
-                width: 36px;
-                height: 36px;
-                font-size: 15px;
-                border-radius: 9px;
-            }
-            
-            .luna-details h1 {
-                font-size: 18px;
-            }
-            
-            .controls-container {
-                gap: 4px;
-            }
-            
-            .control-button {
-                padding: 5px;
-                min-width: 30px;
-                min-height: 30px;
-            }
-            
-            .messages {
-                padding: 12px 16px;
-                gap: 12px;
-            }
-            
-            .message {
-                max-width: 88%;
-                gap: 8px;
-            }
-            
-            .message-avatar {
-                width: 26px;
-                height: 26px;
-                font-size: 10px;
-            }
-            
-            .message-content {
-                padding: 9px 12px;
-                font-size: 14px;
-                border-radius: 14px;
-            }
-            
-            .input-container {
-                padding: 10px 16px;
-                gap: 8px;
-                padding-bottom: calc(10px + env(safe-area-inset-bottom));
-            }
-            
-            .message-input {
-                min-height: 38px;
-                padding: 9px 14px;
-                border-radius: 19px;
-            }
-            
-            .send-button {
-                padding: 9px 14px;
-                font-size: 14px;
-                min-width: 65px;
-                height: 38px;
-                border-radius: 19px;
-            }
-            
-            .typing-indicator {
-                padding: 10px 16px 0;
-                gap: 8px;
-            }
-            
-            .typing-indicator .message-avatar {
-                width: 26px;
-                height: 26px;
-                font-size: 10px;
-            }
-            
-            .welcome-message {
-                padding: 24px 16px;
-                font-size: 14px;
-            }
-        }
+@media (max-width: 480px) {
+    .header {
+        padding: 10px 16px;
+        padding-top: calc(10px + env(safe-area-inset-top));
+    }
+    
+    .luna-info {
+        gap: 8px;
+    }
+    
+    .luna-avatar {
+        width: 36px;
+        height: 36px;
+        font-size: 15px;
+        border-radius: 9px;
+    }
+    
+    .luna-details h1 {
+        font-size: 18px;
+    }
+    
+    .controls-container {
+        gap: 4px;
+    }
+    
+    .control-button {
+        padding: 5px;
+        min-width: 30px;
+        min-height: 30px;
+    }
+    
+    .messages {
+        padding: 12px 16px;
+        gap: 12px;
+    }
+    
+    .message {
+        max-width: 88%;
+        gap: 8px;
+    }
+    
+    .message-avatar {
+        width: 26px;
+        height: 26px;
+        font-size: 10px;
+    }
+    
+    .message-content {
+        padding: 9px 12px;
+        font-size: 14px;
+        border-radius: 14px;
+    }
+    
+    .input-container {
+        padding: 10px 16px;
+        gap: 8px;
+        padding-bottom: calc(10px + env(safe-area-inset-bottom));
+    }
+    
+    .message-input {
+        min-height: 38px;
+        padding: 9px 14px;
+        border-radius: 19px;
+    }
+    
+    .send-button {
+        padding: 9px 14px;
+        font-size: 14px;
+        min-width: 65px;
+        height: 38px;
+        border-radius: 19px;
+    }
+    
+    .typing-indicator {
+        padding: 10px 16px 0;
+        gap: 8px;
+    }
+    
+    .typing-indicator .message-avatar {
+        width: 26px;
+        height: 26px;
+        font-size: 10px;
+    }
+    
+    .welcome-message {
+        padding: 24px 16px;
+        font-size: 14px;
+    }
+}
     </style>
 </head>
 <body>
@@ -689,7 +689,7 @@
 
     loadStoredData() {
         try {
-            const stored = JSON.parse(sessionStorage.getItem('lunaData') || '{}');
+            const stored = JSON.parse(localStorage.getItem('lunaData') || '{}');
             if (stored.conversationHistory && Array.isArray(stored.conversationHistory)) {
                 this.conversationHistory = stored.conversationHistory;
                 this.renderStoredMessages();
@@ -702,7 +702,7 @@
 
     saveData() {
         try {
-            sessionStorage.setItem('lunaData', JSON.stringify({
+            localStorage.setItem('lunaData', JSON.stringify({
                 conversationHistory: this.conversationHistory
             }));
         } catch (error) {
@@ -874,7 +874,7 @@
         context += `Current relationship stage: ${stage} (${messageCount} messages exchanged) - ${this.personality.conversation_stages[stage]}\n\n`;
         
         // Add recent conversation history with more context for deeper relationships
-        const historyLength = stage === 'close' ? 20 : stage === 'friend' ? 16 : 12;
+        const historyLength = stage === 'close' ? 80 : stage === 'friend' ? 60 : 40;
         const recentHistory = this.conversationHistory.slice(-historyLength);
         
         if (recentHistory.length > 0) {
@@ -975,7 +975,7 @@
         this.conversationHistory = [];
         
         // Clear stored data
-        sessionStorage.removeItem('lunaData');
+        localStorage.removeItem('lunaData');
         
         // Clear messages
         const messagesContainer = document.getElementById('messages');
@@ -997,8 +997,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     new LunaCompanion();
 });
-        // Auto-refresh every 300 seconds
-setInterval(() => location.reload(), 300000);
     </script>
 </body>
 </html>
